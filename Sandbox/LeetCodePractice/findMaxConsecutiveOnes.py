@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+
+from typing import List
+
 class Solution:
     def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
         hi = []
