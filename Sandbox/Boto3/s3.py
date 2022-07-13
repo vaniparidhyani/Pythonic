@@ -1,0 +1,19 @@
+import boto3
+
+
+BUCKET_NAME = 'genesis-nonprod-bucket'
+ACCESS_KEY = 'AKIAVO33YYX6KP4YJZ3N'
+SECRET_KEY = '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'
+
+session = boto3.session.Session(
+    aws_access_key_id=ACCESS_KEY,
+    aws_secret_access_key=SECRET_KEY,
+    region_name = 'us-west-2'
+)
+
+s3 = session.resource('s3')
+my_bucket = s3.Bucket(BUCKET_NAME)
+
+print(my_bucket.objects.all())
+for my_bucket_object in my_bucket.objects.all():
+    print(my_bucket_object)
