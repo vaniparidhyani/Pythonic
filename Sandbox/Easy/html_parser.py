@@ -1,5 +1,6 @@
 import urllib2
 def GetNext(content, last_location):
+  #string.find(value, start, end) -> returns position/index of value in string
   start = content.find('<', last_location)
   if start == -1:
     return None, -1
